@@ -170,7 +170,7 @@
           }
 
           // Set as empty if is empty (damn I must improve this...)
-          if ($input.val() === null || $input.val() == "undefined" || $input.val() === "") {
+          if (($input.val() === null || $input.val() == "undefined" || $input.val() === "") && !$input.is("select")) {
             $formGroup.addClass("is-empty");
           }
 
@@ -194,7 +194,7 @@
           var $formGroup = $input.closest(".form-group");
           var isValid = (typeof $input[0].checkValidity === "undefined" || $input[0].checkValidity());
 
-          if ($input.val() === "") {
+          if ($input.val() === "" && !$input.is("select")) {
             $formGroup.addClass("is-empty");
           }
           else {
